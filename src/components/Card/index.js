@@ -28,10 +28,27 @@ export default function Card() {
   function handleFiltroChange(event) {
     console.log(filmes);
     console.log(event.target.value);
+    const ordenado = [...filmes]
     if (event.target.value == "ano") {
-      filmes.sort(function (a, b) {
-        return a - b;
-      });
+      setFilmes(
+        ordenado.sort(function (a, b) {
+        return(a.ano - b.ano)
+      })
+      )
+    }
+    else if(event.target.value == "titulo"){
+      setFilmes(
+        ordenado.sort(function(a,b){
+        return (a.titulo.localeCompare(b.titulo));
+      })
+      )
+    }
+    else if(event.target.value == 'nota'){
+      setFilmes(
+        ordenado.sort(function(a,b){
+          return (a.nota - b.nota)
+        })
+      )
     }
     console.log(filmes);
   }
@@ -46,8 +63,8 @@ export default function Card() {
         }
       })
     );
-    console.log(filmes);
   }
+  console.log('----', filmes);
 
   return (
     <div className="container text-center">
