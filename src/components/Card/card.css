@@ -5,3 +5,15 @@
   grid-template-columns: auto auto auto;
   row-gap: 10px;
 }
+
+.filtrarPor {
+  margin-left: 50%;
+  margin-bottom: 25px;
+}
+
+.search {
+  margin: 0 auto 20px auto;
+}
+.search > input {
+  width: 50%;
+}

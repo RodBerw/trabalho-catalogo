@@ -6,29 +6,6 @@ import Title from "./../components/Title/index";
 import Comments from "./../components/Comments/index";
 import Card from "../components/Card";
 
-/*
-const filmes = [
-  {
-    nome: "Vingadores",
-    genero: "Ação/Nerd",
-    descricao: "Filme da Marvel com super-heróis",
-    nota: 5,
-  },
-  {
-    nome: "Vingadores 2",
-    genero: "Ação/Nerd",
-    descricao: "Filme da Marvel com super-heróis",
-    nota: 5,
-  },
-  {
-    nome: "Vingadores 3",
-    genero: "Ação/Nerd",
-    descricao: "Filme da Marvel com super-heróis",
-    nota: 5,
-  },
-];
-*/
-
 function Detalhes() {
   const [filmes, setFilmes] = useState([]);
   const [detalhes, setDetalhes] = useState([]);

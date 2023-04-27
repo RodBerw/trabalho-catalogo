@@ -29,3 +29,16 @@ input {
   font-size: 14px;
   color: rgb(182, 57, 57);
 }
+
+.planoBotao {
+  background-color: rgb(74, 127, 224);
+  color: white;
+  width: 100px;
+  border-radius: 15px;
+  font-size: 20px;
+  border: 0;
+}
+
+.selected {
+  background-color: rgb(145, 184, 255);
+}

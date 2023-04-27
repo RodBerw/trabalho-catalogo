@@ -8,6 +8,7 @@ export default function Register() {
   const [nomeCartao, setNomeCartao] = useState("");
   const [numeroCartao, setNumeroCartao] = useState("");
   const [cvc, setCvc] = useState("");
+  const [plano, setPlano] = useState("");
 
   const [numeroCartaoPassou, setNumeroCartaoPassou] = useState(0);
   const [cvcPassou, setCvcPassou] = useState(0);
@@ -46,11 +47,16 @@ export default function Register() {
     setCvc(event.target.value);
   }
 
+  function handlePlanoChange(event) {
+    setPlano(event.target.value);
+    console.log(plano);
+  }
+
   function handleSubmit(event) {
     event.preventDefault();
     // enviar dados de cadastro para o servidor aqui
     console.log(`Nome: ${nome}, Telefone: ${telefone},
-    Endereço: ${endereco}, Nome do Cartão: ${nomeCartao},
+    Endereço: ${endereco}, Plano: ${plano}, Nome do Cartão: ${nomeCartao},
     Número do Cartão: ${numeroCartao}, CVC: ${cvc}`);
   }
 
@@ -84,6 +90,25 @@ export default function Register() {
               />
             </label>
             <br />
+            <label>
+              Plano:
+              <br></br>
+              <input
+                className="planoBotao"
+                type="button"
+                value={"Prata"}
+                onClick={handlePlanoChange}
+                style={{ backgroundColor: plano == "Prata" ? "blue" : "black" }}
+              />
+              <input
+                className="planoBotao"
+                type="button"
+                value={"Ouro"}
+                onClick={handlePlanoChange}
+                style={{ backgroundColor: plano == "Ouro" ? "blue" : "black" }}
+              />
+            </label>
+            <br />
           </div>
           <div className="payment">
             <h4>Dados do Cartão</h4>
@@ -110,7 +135,7 @@ export default function Register() {
             <br />
             <label>
               CVC:
-              <input type="text" value={cvc} onChange={handleCvcChange} />
+              <input type="password" value={cvc} onChange={handleCvcChange} />
             </label>
             {cvcPassou == 0 && (
               <p className="warning">
