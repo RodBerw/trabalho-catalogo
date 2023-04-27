@@ -1,0 +1,31 @@
+.cadastro {
+  font-size: 28px;
+  text-align: center;
+}
+
+.form {
+  width: 50%;
+  margin: auto;
+  text-align: center;
+}
+
+.container1 {
+  display: grid;
+  grid-template-columns: auto auto;
+  column-gap: 30%;
+}
+
+input {
+  margin: 5px;
+}
+
+.submit {
+  width: 50%;
+  margin: 25px auto auto auto;
+}
+
+.warning {
+  margin: 0;
+  font-size: 14px;
+  color: rgb(182, 57, 57);
+}
