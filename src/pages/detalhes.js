@@ -21,34 +21,36 @@ function Detalhes() {
   const { filme } = useParams();
   useEffect(() => {
     const filmeEscolhido = filmes?.filter((f) => f.titulo === filme);
-    if(filmeEscolhido?.[0] == null || detalhes.length){
-      return
+    if (filmeEscolhido?.[0] == null || detalhes.length) {
+      return;
     }
     fetch(
       `https://my-json-server.typicode.com/marycamila184/moviedetails/moviedetails/${filmeEscolhido[0].id}`
-      )
+    )
       .then((response) => response.json())
       .then((data) => setDetalhes(data))
       .catch((err) => console.error(err));
-      console.log(filmeEscolhido)
-      if(!detalhes){
-        console.log("Erro")
-      }
+    console.log(filmeEscolhido);
+    if (!detalhes) {
+      console.log("Erro");
+    }
   }, [filmes]);
-  
+
   console.log(detalhes);
 
   return (
     <div>
       <Title title={"Detalhes"} text="" />
-      <div style={{display: "grid", gridTemplateColumns: "auto auto"}}>
-        <img src={detalhes.poster}
-        style={{marginLeft: "50%", width: "75%", textAlign:"center"}}></img>
-        <div className="container text-center" style={{width:"75%"}}>
+      <div style={{ display: "grid", gridTemplateColumns: "auto auto" }}>
+        <img
+          src={detalhes.poster}
+          style={{ marginLeft: "50%", width: "75%", textAlign: "center" }}
+        ></img>
+        <div className="container text-center" style={{ width: "75%" }}>
           <h2>{detalhes.titulo}</h2>
           <h2>{detalhes.ano}</h2>
           <h5>{detalhes.sinopse}</h5>
-          
+
           {/*<Comments filme={filmeEscolhido[0].nome} />*/}
         </div>
       </div>
